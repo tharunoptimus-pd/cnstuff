@@ -34,22 +34,26 @@ app.post("/", (req, res) => {
 
 If XAMPP is installed, you can start the server with the following PHP script:
 ```php
-// index.php
+// post.php
 <?php
-
-    $isPost = $_SERVER['REQUEST_METHOD'] == "POST";
-
-    if($isPost) {
+    if($_SERVER['REQUEST_METHOD'] == "POST") {
         header("HTTP/1.1 200 OK");
-        echo "POST Response";
+        echo "This is a post response";
     }
-    else {
-        header("HTTP/1.1 200 OK");
-        echo "GET Response";
-    }
-
 ?>
 ```
+
+```php
+// get.php
+<?php
+    if($_SERVER['REQUEST_METHOD'] == "GET") {
+        header("HTTP/1.1 200 OK");
+        echo "This is a get response";
+    }
+?>
+```
+
+
 
 If the server is running we can start implementing the Java Program
 
