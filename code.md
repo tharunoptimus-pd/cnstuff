@@ -437,6 +437,7 @@ public class FTPClient {
 
 ```java
 // userver.java
+// userver.java
 import java.io.*;
 import java.net.*;
 
@@ -449,8 +450,11 @@ public class userver {
         }
         return -1;
     }
-
+    
     public static void main(String arg[]) throws IOException {
+        byte[] senddata = new byte[1021];
+        byte[] receivedata = new byte[1021];
+        DatagramSocket serversocket = new DatagramSocket(1362);
         // Initialize Arrays of Strings containing the domain name or hostname
         String[] hosts = { "zoho.com", "gmail.com", "google.com", "facebook.com" };
 
@@ -465,9 +469,6 @@ public class userver {
 
         System.out.println("Press Ctrl + C to Quit");
         while (true) {
-            DatagramSocket serversocket = new DatagramSocket(1362);
-            byte[] senddata = new byte[1021];
-            byte[] receivedata = new byte[1021];
             
             String capsent;
             System.out.println("Request for host " + sen);
